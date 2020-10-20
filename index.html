@@ -1,14 +1,143 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      * {
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<title>Page Title</title>
+<style>
+header {
+        background-color: #42c1d0;
+        display: block;
         box-sizing: border-box;
+        padding: 10px;
+        color: white;
+        text-align: center;
       }
+      footer {
+        background-color: #42c1d0;
+        padding: 10px;
+        color: white;
+        text-align: center;
+      }
+
+.hidden {
+    display: none;
+    }
+.inline {
+    display: inline-block;
+    }
+.title{
+    text-align: center;  }
+#next-btn{
+    margin-bottom: 25px;
+display:block;
+margin:auto;
+width:50%;}
+
+.selected, .div:focus{
+  background: #FFDEAD;
+}
+
+.answer:focus{
+  background: #41c2d4;
+
+
+}
+.answer:selected{
+  background: #41c2d4;
+
+
+}
+.selected {
+    border-top: 2px solid black;
+    border-bottom: $border;
+    background-color: black;
+    color:white;  }
+#question-num, .inline-time{
+    
+   }
+.inline-time{
+   background-color:#3167B1;
+    padding-top: 5px;
+    width:100%;
+    border-radius:40px;
+    color:white;}
+#game 
+    background-color:;
+    color: #ffffff;
+    padding: 5px 20px 0px 20px;  }
+    
+    
+    
+    
+.game-top{
+    background-color:pink;
+
+      width: 100%;  }
+    
+.answer{
+    max-width: 100%;
+    width:90%;
+    display:inline;
+     background-color:#e2e2e2;
+   text-align:left;
+    border:1px solid #7b7c7d;
+    margin-bottom:5px;
+    border-radius:50px;
+    }
+    
+    
+#question{
+  font-size:17px;
+width:100%;
+color:black;
+   
+   }
+    
+    #choices{
+     margin-bottom: 10px;
+    }
+#results{
+    text-align: center;
+    background-color:#3167B1;
+    height:auto;
+    color:white;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:40px;
+    padding-right:40px;
+  }
+  .vertical { 
+            border-left: 1px solid white; 
+            height: 100px; 
+            position:absolute; 
+            padding:0px;
+            margin-right:0px;
+            margin-bottom:20px;
+            margin-right:20px;
+        }
+       .container4{
+        border-radius: 30px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 60%;
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+@media screen and (max-width: 600px) {
+  .container4{
+    float: none;
+    width: 100%;
+  }
+}
 
       input[type="text"],
       select,
@@ -40,45 +169,24 @@
       input[type="submit"]:hover {
         background-color: #45a049;
       }
-
-      .container {
-        border-radius: 30px;
-        background-color: #f2f2f2;
-        padding: 20px;
-        width: 60%;
-        margin: auto;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-      @media screen and (max-width: 600px) {
-        .container {
-          width: 100%;
-        }
-      }
-      header {
-        background-color: #42c1d0;
-        display: block;
-        box-sizing: border-box;
-        padding: 10px;
-        color: white;
-        text-align: center;
-      }
-      footer {
-        background-color: #42c1d0;
-        padding: 10px;
-        color: white;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h3>QUIZ</h3>
+</style>
+</head>
+<body>
+ <header>
+      <h4>Medisage Quiz</h4>
     </header>
-    <main>
-      <div class="container">
+<div class="container4">
+
+ 
+  <div id="welcome">
+    
+   
+    <p class="timer hidden">
+   
+      
+      <div id="intro" class="row center-block">
+        
+        <div class="col col-sm-12">
         <form action="/action_page.php">
           <label for="fname"> Name</label>
           <input
@@ -94,12 +202,268 @@
           <label for="Email">KUA ID</label>
           <input type="text" id="kua id" name="kua id" placeholder="ID" />
 
-          <input type="submit" value="Submit" />
         </form>
+      
+       <button class="btn btn-success btn-block" onclick="initCounter()" id="start-btn" style="padding:10px;background-color:blue;margin-top:10px;border-radius:20px;">Start</button>
+       </form>
+        </div>
+      
       </div>
-    </main>
-    <footer>
-      <h5>© Copyright Medisage. All Rights Reserved</h5>
+    </p>
+  </div>
+  
+  
+  <div class="hidden" id="game">
+    <div class="game-top">
+    
+    
+<div class="inline-time">
+<div id="question-num" style="float:right;font-size:2px; margin-top:16px;padding-right:20px;"></div>
+      
+        <p style="color:white;padding-top:20px;">        
+<i class="fa fa-clock-o" style="font-size:22px;color:white;padding-left:30px;">
+Timer:
+          <span class="game-timer">15</span>
+          </i>
+          
+             
+        </p>
+        
+        
+        
+        
+        
+      
+         
+         
+         
+      </div>
+      
+     </div>
+<br>
+
+
+    <div id="question"> </div>
+
+              
+
+    <div id="choices">
+  
+  
+  
+      <button id="A"  class="answer" value="A"></button>
+      <button id="B" class="answer" value="B"></button>
+      <button id="C" class="answer" value="C"></button>
+      <button id="D" class="answer" value="D"></button>
+      
+    </div>
+    
+    
+    
+    <br>
+
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary btn-block7" id="next-btn" style="width:60%; background-color:#3167B1;display:block;margin:auto;border-radius:40px;">Next <i class="fa fa-arrow-right" style="font-size:18px;color:white;float:right;"></i>
+</button>
+      </div>
+      <div class="col-sm-6">
+        <!--         <button class="btn btn-warning btn-block pull-right" id="restart-btn" onclick="restartGame()">Restart</button> -->
+      </div>
+    </div>
+
+  </div>
+  <div class="hidden" id="result-section">
+    <div id="results">
+    <i class="fas fa-lightbulb" style="font-size:108px;color:white;"></i>
+
+
+    <h1 style="padding:10px;">your quiz is complete </h1>
+      <div id="number-wrong" style="padding:10px;"></div>
+      <div id="number-correct" style="padding:10px;"></div>
+      <h4 style="padding:10px;">Total Score: <span id="score" />
+        </h4>
+        <h2 style="padding:10px;">we will email you question and answer </h2>
+    </div>
+    <br>
+   
+  </div>
+</div>
+</div>
+<script>
+$( document ).ready(function() {
+  $( "#choice" ).click(function() {
+    $( "#choice" ).css('background', '#41c2d4');
+  });
+});
+   
+               
+var trivia = [
+  {
+    question:
+      "Which of the following is a large blood vessel that carries blood away from the heart?",
+    answerSet: {
+      A: "Vein",
+      B: "Artery",
+      C: "Capillary",
+      D: "none"
+    },
+    correctAnswer: "B"
+  },
+  {
+    question: "Which of the following is not a member of the vitamin B complex?",
+    answerSet: {
+      A: "Thiamine",
+      B: "Riboflavin",
+      C: "Ascorbic acid",
+      D: "none"
+    },
+    correctAnswer: "C"
+  },
+  {
+       question:
+      "Which blood vessels have the smallest diameter?",
+    answerSet: {
+      A: "Lymphatic",
+      B: "Venules",
+      C: "Arterioles",
+      D: "Capillaries"
+    },
+    correctAnswer: "D"
+  },
+  {
+     question: "Which among the following human organs does not have any blood supply?",
+    answerSet: {
+      A: "Eyes",
+      B: "Nose",
+      C: "Ear",
+      D: "Lips"
+    },
+    correctAnswer: "A"
+  },
+
+
+  {
+    question: "Which among the following vitamins correctly defines ascorbic acid?",
+    answerSet: {
+      A: "Vitamin K",
+      B: "Vitamin B ",
+      C: "Vitamin A", 
+      D: "Vitamin  C"
+    },
+    correctAnswer: "D"
+  }
+];
+// Starting Countdown Functions
+var startTime = 1;
+function initCounter() {
+  $("#intro").hide();
+  $(".timer").removeClass("hidden");
+  setInterval(initialCountdown, 0.0001);
+}
+function initialCountdown() {
+  startTime--;
+  if (startTime === 0) {
+    clearInterval(initCounter);
+    initGame();
+    return;
+  }
+  $(".first-timer").text(startTime);
+}
+
+// Answer toggle
+$(".answer").click(function() {
+$(".answer").removeClass("selected");
+  $(this).addClass("selected");
+});
+
+// Game Runtime
+function initGame() {
+  $("#welcome").hide();
+  $("#replaceStr").removeClass("hidden");
+  $("#removeStr").hide();
+  var gameTime = 30; //21 for production
+  var currentQuestion = 0;
+  var numIncorrect = 0;
+  var numCorrect = 0;
+  var gameTimer = setInterval(runTrivia, 1000);
+  var restarted = false;
+  $("#next-btn").click(function() {
+    gameTime = 1;
+    return gameTime;
+  });
+  
+  function runTrivia() {
+    var triviaStr = trivia[currentQuestion];
+    var answers = triviaStr.answerSet;
+    var correctAnswer = triviaStr.correctAnswer;
+    var questionArea = $("#question");
+    var answerChoices = $("#choices");
+    gameTime--;
+
+    // Updates the DOM for each question
+    $(".game-timer").text(parseInt(gameTime));
+    $("#question-num").html(
+      "<h4> Question:" + (currentQuestion + 1) + "/5</h4>"
+    );
+    questionArea.text(triviaStr.question);
+    $.each(answers, function(i, val) {
+      $("#" + i).text(i + " : " + val);
+    });
+    $("#" + correctAnswer).addClass("correct");
+    $("#game").show("slow");
+
+    function showResults() {
+      var score = numCorrect * 5;
+      $("#number-correct").html(
+        "<h3>You got " + numCorrect + " correct.</h3>"
+      );
+      $("#number-wrong").html(
+        "<h3>You got " + numIncorrect + " wrong.</h3>"
+      );
+      $("#score").text(score + "%");
+      $("#result-section").show("slow");
+    }
+    
+    
+    var selected = $(".selected");
+    if (gameTime === 0 && currentQuestion === 4) {
+      $("#game").hide();
+      if (selected.hasClass("correct")) {
+        numCorrect++;
+      } else {
+        numIncorrect++;
+      }
+      showResults();
+      clearInterval(gameTimer);
+    } else if (gameTime === 0 && currentQuestion !== 4) {
+      gameTime += 15; //21 for finished
+      $("#game").hide("slow");
+      $(".answer").removeClass("selected");
+      if (selected.hasClass("correct")) {
+        numCorrect++;
+        currentQuestion++;
+      } else {
+        numIncorrect++;
+        currentQuestion++;
+      }
+      $("#" + correctAnswer).removeClass("correct");
+    }
+  }
+}
+function restartGame() {
+      $("#game").hide();
+      clearInterval();
+      $("#welcome").show("slow");
+     return (startTime = 5);
+    }
+function nextQuestion() {
+  return (gameTime = 0);
+}
+
+</script>
+<footer>
+      <h6>© Copyright Medisage. All Rights Reserved</h6>
     </footer>
-  </body>
+</body>
 </html>
