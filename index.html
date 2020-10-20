@@ -437,7 +437,7 @@ function initGame() {
       showResults();
       clearInterval(gameTimer);
     } else if (gameTime === 0 && currentQuestion !== 4) {
-      gameTime += 15; //21 for finished
+      gameTime += 30; //21 for finished
       $("#game").hide("slow");
       $(".answer").removeClass("selected");
       if (selected.hasClass("correct")) {
