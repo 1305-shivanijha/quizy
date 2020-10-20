@@ -218,7 +218,7 @@ color:black;
     
     
 <div class="inline-time">
-<div id="question-num" style="float:right;font-size:2px; margin-top:16px;padding-right:20px;"></div>
+<div id="question-num" style="float:right;font-size:12px; margin-top:16px;padding-right:20px;"></div>
       
         <p style="color:white;padding-top:20px;">        
 <i class="fa fa-clock-o" style="font-size:22px;color:white;padding-left:30px;">
@@ -404,7 +404,7 @@ function initGame() {
     // Updates the DOM for each question
     $(".game-timer").text(parseInt(gameTime));
     $("#question-num").html(
-      "<h4> Question:" + (currentQuestion + 1) + "/5</h4>"
+      "<h6> Question:" + (currentQuestion + 1) + "/5</h6>"
     );
     questionArea.text(triviaStr.question);
     $.each(answers, function(i, val) {
