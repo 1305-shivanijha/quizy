@@ -201,8 +201,6 @@ color:black;
             placeholder="Your name.."
           />
 
-          <label for="Email">Email Id</label>
-          <input type="text" id="email" name="email" placeholder="email" />
 
           <label for="Email">KUA ID</label>
           <input type="text" id="kua id" name="kua id" placeholder="ID" />
@@ -284,10 +282,8 @@ Timer:
 
 
     <h1 style="padding:10px;">your quiz is complete </h1>
-      <div id="number-wrong" style="padding:10px;"></div>
       <div id="number-correct" style="padding:10px;"></div>
-      <h4 style="padding:10px;">Total Score: <span id="score" />
-        </h4>
+     
         <h2 style="padding:10px;">we will email you question and answer </h2>
     </div>
     <br>
@@ -421,7 +417,7 @@ function initGame() {
     function showResults() {
       var score = numCorrect * 5;
       $("#number-correct").html(
-        "<h3>You got " + numCorrect + " correct.</h3>"
+        "<h3>You got " + numCorrect + " correct out of 5</h3>"
       );
       $("#number-wrong").html(
         "<h3>You got " + numIncorrect + " wrong.</h3>"
